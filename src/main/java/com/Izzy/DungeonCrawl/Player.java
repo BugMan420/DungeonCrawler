@@ -5,6 +5,8 @@ public class Player {
     public static int currentYCo = 0;
     public static String name = "TestDummy";
 
+    public Player (){};
+
 
     public static int getCurrentXCo() {
         return currentXCo;
@@ -15,7 +17,6 @@ public class Player {
     }
 
     public static String getName() {
-
         return name;
     }
 
