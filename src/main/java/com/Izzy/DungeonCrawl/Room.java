@@ -1,40 +1,49 @@
 package com.Izzy.DungeonCrawl;
 
-public class Room {
-    private final String description;
+import java.util.Random;
 
-    public String getDescription() {
+public class Room {
+    private static String description;
+
+    public static String getDescription() {
         return description;
     }
 
-    public boolean isTreasure() {
+    public static boolean isTreasure() {
         return isTreasure;
     }
-    private final boolean isTreasure;
+    private static boolean isTreasure;
 
     private Room (String description, boolean isTreasure){
         this.description = description;
         this.isTreasure = isTreasure;
     }
 
-    public static Room newRoom(){
-        String description = null;
-        boolean isTreasure = false;
-        int roomType = 1;
-        switch (roomType){
+    public static Room newRoom(int i){
+        boolean isTreasure=false;
+        Random roomRand = new Random();
+        int roomType;
+        int upperBound = 4;
+            switch (i){
             case 1:
                 description = "A dimly lit room with four doors";
-                isTreasure = false;
+                getDescription();
                 break;
             case 2:
-                description = "A room with nothing of note in it";
-                isTreasure = false;
-            case 3:
-                description = "A room with a whole load of treasure";
-                isTreasure = true;
+                description= "A room with nothing of note in it";
+                getDescription();
                 break;
-        }
-        return new Room(newRoom().getDescription(), newRoom().isTreasure);
+            case 3:
+                description = "A room that smells funky";
+                getDescription();
+                break;}
+        return null;
+    }
+
+    public static Room treasureRoom(){
+        String description = "A room with treasure in it. Congratulations!";
+        boolean isTreasure = true;
+        return null;
     }
 
 }
