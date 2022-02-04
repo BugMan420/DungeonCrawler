@@ -14,7 +14,6 @@ public class Map {
             NewWorld[0][0] = Room.startingRoom;
             NewWorld[3][3] = Room.treasureRoom;
         }
-        Player.newPlayer();
         System.out.println("Which Direction would you like to go?");
         switch(inputRead.next()){
             case "north":
@@ -32,5 +31,6 @@ public class Map {
             default:
                 System.out.println("Please choose from north, east, south or west. Which direction would you like to go?");
         }
+
     }
 }

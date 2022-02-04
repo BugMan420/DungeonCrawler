@@ -5,13 +5,6 @@ public class Player {
     public static int currentYCo = 0;
     public static String name = "TestDummy";
 
-    public static Void newPlayer() {
-        getCurrentXCo();
-        getCurrentYCo();
-        getName();
-        System.out.print(name);
-        return null;
-    }
 
     public static int getCurrentXCo() {
         return currentXCo;
@@ -22,6 +15,7 @@ public class Player {
     }
 
     public static String getName() {
+
         return name;
     }
 
