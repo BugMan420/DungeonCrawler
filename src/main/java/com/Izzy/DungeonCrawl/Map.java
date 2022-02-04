@@ -7,7 +7,7 @@ public class Map<Coordinates> {
     Room NewWorld[][] = new Room [4][4];
     Scanner inputRead = new Scanner(System.in);
     int xPos, yPos;
-    int randUpper = 4;
+    int randUpper=4;
     Random treasureRand = new Random();
     int roomGenerator;
 
@@ -26,8 +26,8 @@ public class Map<Coordinates> {
     public void NewWorld(){
         for(int i=0; i<NewWorld.length;i++){
             for(int j=0; j<NewWorld.length;j++){
-                NewWorld[i][j] = Room.newRoom(roomGenerator);
                 roomGenerator = treasureRand.nextInt(randUpper);
+                NewWorld[i][j] = Room.newRoom(roomGenerator);
             }
             NewWorld[treasureRand.nextInt(randUpper)][treasureRand.nextInt(randUpper)] = Room.treasureRoom();
         }
@@ -41,14 +41,12 @@ public class Map<Coordinates> {
             switch (inputRead.next()) {
                 case "north":
                     Player.moveNorth();
-                    getPlayer();
                     xPos = Player.getCurrentXCo();
                     yPos = Player.getCurrentYCo();
                     System.out.println(Room.getDescription());
                     break;
                 case "south":
                     Player.moveSouth();
-                    getPlayer();
                     xPos = Player.getCurrentXCo();
                     yPos = Player.getCurrentYCo();
                     setCo(xPos,yPos);
@@ -56,7 +54,6 @@ public class Map<Coordinates> {
                     break;
                 case "east":
                     Player.moveEast();
-                    getPlayer();
                     xPos = Player.getCurrentXCo();
                     yPos = Player.getCurrentYCo();
                     setCo(xPos,yPos);
